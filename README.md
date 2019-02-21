@@ -12,3 +12,12 @@ Implementación de API.
 ## Instalación
 
 Para la instalación se requiere ejecutar los siguientes comandos:
+
+- Si es la primera vez que ejecuta
+
+php artisan migrate
+php artisan db:seed
+
+- Cuando es necesario reestructura las migraciones y datos de prueba
+
+php artisan migrate:refresh --seed
