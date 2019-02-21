@@ -21,7 +21,6 @@ php artisan db:seed
 ```
 - Cuando es necesario reestructura las migraciones y datos de prueba
 
-php artisan migrate:refresh --seed
 ```console
 php artisan migrate:refresh --seed
 ```
