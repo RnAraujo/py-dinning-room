@@ -28,7 +28,13 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = new Book;
+        $book->description = $request->description;
+        $book->enabled = $request->enabled;
+
+        $book->save();
+
+        return response()->json($book);
     }
 
     /**
@@ -39,7 +45,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $book = Book::find($id);
+
+        return response()->json($book);
     }
 
     /**
@@ -51,7 +59,11 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $book = Book::find($id);
+        $book->description = $request->description;
+        $book->enabled = $request->enabled;
+
+        return response()->json($book);
     }
 
     /**
@@ -62,6 +74,10 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+
+        $book->delete();
+
+        return response()->json($book);
     }
 }

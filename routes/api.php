@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::apiResource('books', 'API\BookController');
+Route::apiResource('books', 'API\BookController')->middleware('auth:api');
